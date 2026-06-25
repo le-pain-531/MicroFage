@@ -3,16 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QLZ Web Development</title>
+    <title>MicroFage</title>
     <style>
         /* ===== FONTS & RESET ===== */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+        @import url('https://cdn.jsdelivr.net/npm/@fontsource/inter@5.0.18/index.min.css');
+        @import url('https://cdn.jsdelivr.net/npm/@fontsource/space-grotesk@5.0.18/index.min.css');
+        @import url('https://cdn.jsdelivr.net/npm/@fontsource/orbitron@5.0.18/index.min.css');
+        @import url('https://cdn.jsdelivr.net/npm/@fontsource/azonix@5.0.18/index.min.css');
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         /* ===== CSS VARIABLES ===== */
         :root {
-            --red-primary: #e74c3c;
-            --red-dark: #c0392b;
+            --red-primary: #a01010;
+            --red-dark: #6b0f0f;
+            --red-accent: #c41e1e;
             --black-primary: #0a0a0a;
             --black-soft: #1a1a1a;
             --black-card: #111111;
@@ -59,7 +63,7 @@
             background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(20px);
             padding: 14px 60px;
-            box-shadow: 0 4px 30px rgba(231, 76, 60, 0.15);
+            box-shadow: 0 4px 30px rgba(160, 16, 16, 0.15);
         }
         .nav-logo {
             display: flex;
@@ -75,12 +79,12 @@
         }
         .nav-logo:hover svg { transform: rotate(15deg) scale(1.1); }
         .nav-logo-text {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Azonix', sans-serif;
             font-size: 1.4rem;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            color: var(--white);
         }
-        .nav-logo-text span { color: var(--red-primary); }
         .nav-links {
             display: flex;
             gap: 40px;
@@ -195,8 +199,8 @@
             left: -30%;
             width: 160%;
             height: 200%;
-            background: radial-gradient(ellipse at 30% 50%, rgba(231, 76, 60, 0.12) 0%, transparent 60%),
-                        radial-gradient(ellipse at 70% 30%, rgba(231, 76, 60, 0.06) 0%, transparent 50%);
+            background: radial-gradient(ellipse at 30% 50%, rgba(160, 16, 16, 0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 30%, rgba(160, 16, 16, 0.08) 0%, transparent 50%);
             z-index: 0;
             animation: heroGradientFloat 15s ease-in-out infinite alternate;
         }
@@ -214,14 +218,15 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: rgba(231, 76, 60, 0.1);
-            border: 1px solid rgba(231, 76, 60, 0.3);
+            background: rgba(160, 16, 16, 0.12);
+            border: 1px solid rgba(160, 16, 16, 0.35);
             padding: 10px 24px;
             border-radius: 50px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--red-primary);
-            letter-spacing: 2px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--red-accent);
+            letter-spacing: 3px;
             text-transform: uppercase;
             margin-bottom: 30px;
             animation: fadeInUp 0.8s ease forwards;
@@ -239,18 +244,19 @@
             50% { opacity: 0.5; transform: scale(1.5); }
         }
         .hero h1 {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'Orbitron', sans-serif;
             font-size: 4.5rem;
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
             animation: fadeInUp 0.8s ease 0.2s forwards;
             opacity: 0;
+            letter-spacing: 2px;
         }
-        .hero h1 .red-text { color: var(--red-primary); }
+        .hero h1 .red-text { color: var(--red-accent); }
         .hero-slogan {
-            font-family: 'Space Grotesk', sans-serif;
-            font-size: 1.8rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.6rem;
             font-weight: 300;
             margin-bottom: 40px;
             background: linear-gradient(110deg, #888 0%, #888 30%, #fff 40%, #d4d4d4 45%, #fff 50%, #d4d4d4 55%, #888 70%, #888 100%);
@@ -260,20 +266,23 @@
             background-clip: text;
             animation: fadeInUp 0.8s ease 0.4s forwards, metallicGlint 4s ease-in-out infinite;
             opacity: 0;
-            letter-spacing: 1px;
+            letter-spacing: 4px;
         }
         @keyframes metallicGlint {
             0% { background-position: 200% center; }
             100% { background-position: -200% center; }
         }
         .hero-description {
-            font-size: 1.15rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: 400;
             color: var(--gray);
-            line-height: 1.8;
+            line-height: 1.9;
             max-width: 650px;
             margin: 0 auto 50px;
             animation: fadeInUp 0.8s ease 0.6s forwards;
             opacity: 0;
+            letter-spacing: 0.5px;
         }
         .hero-cta {
             display: flex;
@@ -318,7 +327,7 @@
         .btn-primary:hover::before { left: 100%; }
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(231, 76, 60, 0.4);
+            box-shadow: 0 12px 40px rgba(160, 16, 16, 0.4);
             background: var(--red-dark);
         }
         .btn-secondary {
@@ -408,8 +417,8 @@
             align-items: center;
             gap: 8px;
             padding: 10px 20px;
-            background: rgba(231, 76, 60, 0.08);
-            border: 1px solid rgba(231, 76, 60, 0.2);
+            background: rgba(160, 16, 16, 0.08);
+            border: 1px solid rgba(160, 16, 16, 0.2);
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 500;
@@ -417,7 +426,7 @@
             transition: all 0.3s ease;
         }
         .school-badge:hover {
-            background: rgba(231, 76, 60, 0.15);
+            background: rgba(160, 16, 16, 0.15);
             border-color: var(--red-primary);
             color: var(--white);
             transform: translateY(-2px);
@@ -438,7 +447,7 @@
             max-width: 420px;
             aspect-ratio: 1;
             background: linear-gradient(135deg, var(--black-card) 0%, var(--black-soft) 100%);
-            border: 1px solid rgba(231, 76, 60, 0.15);
+            border: 1px solid rgba(160, 16, 16, 0.15);
             border-radius: 24px;
             display: flex;
             flex-direction: column;
@@ -452,7 +461,7 @@
             content: '';
             position: absolute;
             inset: -1px;
-            background: linear-gradient(135deg, rgba(231, 76, 60, 0.3), transparent, rgba(231, 76, 60, 0.1));
+            background: linear-gradient(135deg, rgba(160, 16, 16, 0.3), transparent, rgba(160, 16, 16, 0.1));
             border-radius: 24px;
             z-index: -1;
         }
@@ -518,14 +527,14 @@
         .benefit-card:hover::before { transform: scaleX(1); }
         .benefit-card:hover {
             transform: translateY(-12px);
-            border-color: rgba(231, 76, 60, 0.3);
-            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(231, 76, 60, 0.08);
+            border-color: rgba(160, 16, 16, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(160, 16, 16, 0.08);
         }
         .benefit-icon {
             width: 80px;
             height: 80px;
             margin: 0 auto 28px;
-            background: rgba(231, 76, 60, 0.08);
+            background: rgba(160, 16, 16, 0.08);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -533,7 +542,7 @@
             transition: all 0.4s ease;
         }
         .benefit-card:hover .benefit-icon {
-            background: rgba(231, 76, 60, 0.15);
+            background: rgba(160, 16, 16, 0.15);
             transform: scale(1.1) rotate(5deg);
         }
         .benefit-icon svg {
@@ -557,7 +566,7 @@
             display: inline-block;
             margin-top: 20px;
             padding: 6px 16px;
-            background: rgba(231, 76, 60, 0.1);
+            background: rgba(160, 16, 16, 0.1);
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -580,7 +589,7 @@
             position: relative;
         }
         .portfolio-project:hover {
-            border-color: rgba(231, 76, 60, 0.3);
+            border-color: rgba(160, 16, 16, 0.3);
             box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
             transform: translateY(-8px);
         }
@@ -675,8 +684,8 @@
         .portfolio-tag {
             display: inline-block;
             padding: 6px 16px;
-            background: rgba(231, 76, 60, 0.1);
-            border: 1px solid rgba(231, 76, 60, 0.2);
+            background: rgba(160, 16, 16, 0.1);
+            border: 1px solid rgba(160, 16, 16, 0.2);
             border-radius: 50px;
             font-size: 0.75rem;
             font-weight: 600;
@@ -772,14 +781,14 @@
             color: inherit;
         }
         .contact-item:hover {
-            border-color: rgba(231, 76, 60, 0.3);
+            border-color: rgba(160, 16, 16, 0.3);
             transform: translateX(8px);
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
         .contact-item-icon {
             width: 56px;
             height: 56px;
-            background: rgba(231, 76, 60, 0.1);
+            background: rgba(160, 16, 16, 0.1);
             border-radius: 14px;
             display: flex;
             align-items: center;
@@ -834,7 +843,7 @@
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--red-primary);
-            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.15);
+            box-shadow: 0 0 0 3px rgba(160, 16, 16, 0.15);
         }
         .form-group textarea { height: 120px; resize: vertical; }
         .form-submit-btn {
@@ -866,7 +875,7 @@
         .form-submit-btn:hover {
             background: var(--red-dark);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(231, 76, 60, 0.3);
+            box-shadow: 0 10px 30px rgba(160, 16, 16, 0.3);
         }
 
         /* ===== FOOTER ===== */
@@ -888,12 +897,12 @@
         .footer-logo { display: flex; align-items: center; gap: 12px; }
         .footer-logo svg { width: 36px; height: 36px; }
         .footer-logo-text {
-            font-family: 'Space Grotesk', sans-serif;
-            font-weight: 700;
+            font-family: 'Azonix', sans-serif;
+            font-weight: 400;
             font-size: 1.1rem;
-            letter-spacing: 2px;
+            letter-spacing: 3px;
+            color: var(--white);
         }
-        .footer-logo-text span { color: var(--red-primary); }
         .footer-copy { color: var(--gray); font-size: 0.85rem; }
         .footer-links { display: flex; gap: 24px; }
         .footer-links a {
@@ -954,7 +963,7 @@
             width: 300px;
             height: 300px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(231, 76, 60, 0.06) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(160, 16, 16, 0.06) 0%, transparent 70%);
             pointer-events: none;
             z-index: 1;
             transform: translate(-50%, -50%);
@@ -1052,7 +1061,7 @@
     <!-- Loader -->
     <div class="loader" id="loader">
         <svg class="loader-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="Loading">
-            <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"/>
+            <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#a01010" stroke="#a01010" stroke-width="2"/>
             <line x1="30" y1="38" x2="70" y2="32" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
             <line x1="28" y1="48" x2="72" y2="42" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
             <line x1="28" y1="58" x2="72" y2="52" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
@@ -1073,8 +1082,8 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="#home" class="nav-logo">
-            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="QLZ Logo">
-                <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#e74c3c" stroke="#e74c3c" stroke-width="1.5"/>
+            <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="MicroFage Logo">
+                <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#a01010" stroke="#a01010" stroke-width="1.5"/>
                 <line x1="30" y1="38" x2="70" y2="32" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                 <line x1="28" y1="48" x2="72" y2="42" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                 <line x1="28" y1="58" x2="72" y2="52" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
@@ -1084,7 +1093,7 @@
                 <line x1="50" y1="14" x2="30" y2="28" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                 <line x1="50" y1="86" x2="70" y2="72" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
             </svg>
-            <span class="nav-logo-text"><span>QLZ</span> Web Development</span>
+            <span class="nav-logo-text">MICROFAGE</span>
         </a>
         <ul class="nav-links">
             <li><a href="#home" class="active">Home</a></li>
@@ -1116,7 +1125,7 @@
             <h1>We Build <span class="red-text">Digital</span><br>Experiences</h1>
             <p class="hero-slogan">Simple, clean websites for growing businesses</p>
             <p class="hero-description">
-                We are QLZ Web Development — a team of passionate students from Singapore's top institutions, 
+                We are MicroFage — a team of passionate students from Singapore's top institutions, 
                 building professional, modern websites that make an impact.
             </p>
             <div class="hero-cta">
@@ -1130,7 +1139,7 @@
     <section class="section about-section" id="about">
         <div class="section-header reveal">
             <span class="section-label">Who We Are</span>
-            <h2 class="section-title">About QLZ Web Development</h2>
+            <h2 class="section-title">About MicroFage</h2>
             <p class="section-subtitle">A collective of driven students building real-world web solutions.</p>
             <div class="section-divider"></div>
         </div>
@@ -1153,8 +1162,8 @@
             </div>
             <div class="about-visual reveal reveal-delay-2">
                 <div class="about-visual-card">
-                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="QLZ Icon">
-                        <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#e74c3c" stroke="#e74c3c" stroke-width="1.5"/>
+                    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-label="MicroFage Icon">
+                        <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#a01010" stroke="#a01010" stroke-width="1.5"/>
                         <line x1="30" y1="38" x2="70" y2="32" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                         <line x1="28" y1="48" x2="72" y2="42" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                         <line x1="28" y1="58" x2="72" y2="52" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
@@ -1290,8 +1299,7 @@
                 <h3>Let's Build Something <span>Amazing Together</span></h3>
                 <p>Whether you need a simple landing page or a full business website, we're here to help. Get in touch with us through any of the channels below.</p>
                 <div class="contact-items">
-                    <!-- Email link with pre-filled subject/body for desktop -->
-                    <a href="mailto:qycchn@gmail.com?subject=Website%20Inquiry&body=Hi%20QLZ%20Web%20Development,%0A%0AI%20would%20like%20to%20inquire%20about..." class="contact-item">
+                    <a href="mailto:qycchn@gmail.com?subject=Website%20Inquiry&body=Hi%20MicroFage,%0A%0AI%20would%20like%20to%20inquire%20about..." class="contact-item">
                         <div class="contact-item-icon">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
@@ -1340,8 +1348,8 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-logo">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-label="QLZ Logo">
-                    <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#e74c3c" stroke="#e74c3c" stroke-width="1.5"/>
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" width="36" height="36" aria-label="MicroFage Logo">
+                    <path d="M50 5 L90 27.5 L90 72.5 L50 95 L10 72.5 L10 27.5 Z" fill="#a01010" stroke="#a01010" stroke-width="1.5"/>
                     <line x1="30" y1="38" x2="70" y2="32" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                     <line x1="28" y1="48" x2="72" y2="42" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                     <line x1="28" y1="58" x2="72" y2="52" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
@@ -1351,9 +1359,9 @@
                     <line x1="50" y1="14" x2="30" y2="28" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                     <line x1="50" y1="86" x2="70" y2="72" stroke="#0a0a0a" stroke-width="4" stroke-linecap="round"/>
                 </svg>
-                <span class="footer-logo-text"><span>QLZ</span> Web Development</span>
+                <span class="footer-logo-text">MICROFAGE</span>
             </div>
-            <p class="footer-copy">&copy; 2026 QLZ Web Development. All rights reserved.</p>
+            <p class="footer-copy">&copy; 2026 MicroFage. All rights reserved.</p>
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
@@ -1405,7 +1413,7 @@
             draw() {
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-                ctx.fillStyle = `rgba(231, 76, 60, ${this.opacity})`;
+                ctx.fillStyle = `rgba(160, 16, 16, ${this.opacity})`;
                 ctx.fill();
             }
         }
@@ -1423,7 +1431,7 @@
                     if (dist < 150) {
                         const opacity = (1 - dist / 150) * 0.15;
                         ctx.beginPath();
-                        ctx.strokeStyle = `rgba(231, 76, 60, ${opacity})`;
+                        ctx.strokeStyle = `rgba(160, 16, 16, ${opacity})`;
                         ctx.lineWidth = 0.5;
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
@@ -1511,7 +1519,7 @@
         }, { threshold: 0.5 });
         document.querySelectorAll('.counter').forEach(c => counterObserver.observe(c));
 
-        // ===== FORM SUBMISSION (EMAIL VIA MAILTO - WORKS ON DESKTOP) =====
+        // ===== FORM SUBMISSION =====
         function handleFormSubmit(e) {
             e.preventDefault();
             const name = document.getElementById('name').value.trim();
@@ -1519,7 +1527,7 @@
             const message = document.getElementById('message').value.trim();
             
             const subject = encodeURIComponent('Website Inquiry from ' + name);
-            const body = encodeURIComponent(`Hi QLZ Web Development,\n\nMy name is ${name} and my email is ${email}.\n\n${message}\n\nBest regards,\n${name}`);
+            const body = encodeURIComponent(`Hi MicroFage,\n\nMy name is ${name} and my email is ${email}.\n\n${message}\n\nBest regards,\n${name}`);
             
             window.location.href = `mailto:qycchn@gmail.com?subject=${subject}&body=${body}`;
             document.getElementById('contactForm').reset();
@@ -1556,3 +1564,4 @@
     </script>
 </body>
 </html>
+
