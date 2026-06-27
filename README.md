@@ -1,2 +1,2 @@
 # MicroFage
-The Official website for MicroFage
+The website for MicroFage (Beta version)
